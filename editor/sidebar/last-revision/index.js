@@ -19,7 +19,7 @@ import {
 	getCurrentPostId,
 	getCurrentPostType,
 	isSavingPost,
-} from '../../selectors';
+} from '../../state/selectors';
 import { getWPAdminURL } from '../../utils/url';
 
 function LastRevision( { revisions } ) {

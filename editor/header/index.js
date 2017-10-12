@@ -18,8 +18,8 @@ import PublishWithDropdown from './publish-with-dropdown';
 import PreviewButton from './preview-button';
 import ModeSwitcher from './mode-switcher';
 import Inserter from '../inserter';
-import { hasEditorUndo, hasEditorRedo, isEditorSidebarOpened } from '../selectors';
-import { toggleSidebar } from '../actions';
+import { hasEditorUndo, hasEditorRedo, isEditorSidebarOpened } from '../state/selectors';
+import { toggleSidebar } from '../state/actions';
 
 function Header( {
 	undo,

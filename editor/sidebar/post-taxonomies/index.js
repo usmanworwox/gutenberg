@@ -16,8 +16,8 @@ import { PanelBody, withAPIData } from '@wordpress/components';
 import './style.scss';
 import HierarchicalTermSelector from './hierarchical-term-selector';
 import FlatTermSelector from './flat-term-selector';
-import { getCurrentPostType, isEditorSidebarPanelOpened } from '../../selectors';
-import { toggleSidebarPanel } from '../../actions';
+import { getCurrentPostType, isEditorSidebarPanelOpened } from '../../state/selectors';
+import { toggleSidebarPanel } from '../../state/actions';
 
 /**
  * Module Constants

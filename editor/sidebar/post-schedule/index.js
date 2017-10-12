@@ -18,8 +18,8 @@ import { PanelRow, Dropdown, withAPIData } from '@wordpress/components';
  */
 import './style.scss';
 import PostScheduleClock from './clock';
-import { getEditedPostAttribute } from '../../selectors';
-import { editPost } from '../../actions';
+import { getEditedPostAttribute } from '../../state/selectors';
+import { editPost } from '../../state/actions';
 
 export function PostSchedule( { date, onUpdateDate, user } ) {
 	if ( ! user.data || ! user.data.capabilities.publish_posts ) {

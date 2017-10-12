@@ -16,8 +16,8 @@ import { PanelRow, FormToggle, withInstanceId, withAPIData } from '@wordpress/co
 import {
 	getEditedPostAttribute,
 	isCurrentPostPublished,
-} from '../../selectors';
-import { editPost } from '../../actions';
+} from '../../state/selectors';
+import { editPost } from '../../state/actions';
 
 export function PostPendingStatus( { isPublished, instanceId, status, onUpdateStatus, user } ) {
 	if ( isPublished || ! user.data || ! user.data.capabilities.publish_posts ) {

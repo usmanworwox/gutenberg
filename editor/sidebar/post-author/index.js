@@ -15,8 +15,8 @@ import { Component } from '@wordpress/element';
  * Internal dependencies
  */
 import './style.scss';
-import { getEditedPostAttribute } from '../../selectors';
-import { editPost } from '../../actions';
+import { getEditedPostAttribute } from '../../state/selectors';
+import { editPost } from '../../state/actions';
 
 export class PostAuthor extends Component {
 	constructor() {

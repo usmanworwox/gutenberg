@@ -36,7 +36,7 @@ import {
 	startTyping,
 	stopTyping,
 	updateBlockAttributes,
-} from '../../actions';
+} from '../../state/actions';
 import {
 	getBlock,
 	getBlockFocus,
@@ -52,7 +52,7 @@ import {
 	isFirstMultiSelectedBlock,
 	isTyping,
 	getBlockMode,
-} from '../../selectors';
+} from '../../state/selectors';
 
 const { BACKSPACE, ESCAPE, DELETE, ENTER } = keycodes;
 

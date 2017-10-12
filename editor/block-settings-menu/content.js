@@ -13,8 +13,8 @@ import { IconButton } from '@wordpress/components';
 /**
  * Internal dependencies
  */
-import { isEditorSidebarOpened, getBlockMode } from '../selectors';
-import { removeBlocks, toggleSidebar, setActivePanel, toggleBlockMode } from '../actions';
+import { isEditorSidebarOpened, getBlockMode } from '../state/selectors';
+import { removeBlocks, toggleSidebar, setActivePanel, toggleBlockMode } from '../state/actions';
 
 function BlockSettingsMenuContent( { mode, uids, isSidebarOpened, onDelete, onToggleSidebar, onShowInspector, onToggleMode, onClose } ) {
 	const count = uids.length;

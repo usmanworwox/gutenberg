@@ -21,12 +21,12 @@ import MetaBoxes from '../meta-boxes';
 import UnsavedChangesWarning from '../unsaved-changes-warning';
 import DocumentTitle from '../document-title';
 import AutosaveMonitor from '../autosave-monitor';
-import { removeNotice } from '../actions';
+import { removeNotice } from '../state/actions';
 import {
 	getEditorMode,
 	isEditorSidebarOpened,
 	getNotices,
-} from '../selectors';
+} from '../state/selectors';
 
 function Layout( { mode, isSidebarOpened, notices, ...props } ) {
 	const className = classnames( 'editor-layout', {

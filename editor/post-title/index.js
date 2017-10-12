@@ -17,8 +17,8 @@ import { keycodes } from '@wordpress/utils';
  * Internal dependencies
  */
 import './style.scss';
-import { getEditedPostTitle } from '../selectors';
-import { editPost, clearSelectedBlock } from '../actions';
+import { getEditedPostTitle } from '../state/selectors';
+import { editPost, clearSelectedBlock } from '../state/actions';
 import PostPermalink from '../post-permalink';
 
 /**

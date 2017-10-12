@@ -13,7 +13,7 @@ import { __ } from '@wordpress/i18n';
 /**
  * Internal dependencies
  */
-import { getGutenbergURL, getWPAdminURL } from './utils/url';
+import { getGutenbergURL, getWPAdminURL } from '../utils/url';
 import {
 	resetPost,
 	setupNewPost,

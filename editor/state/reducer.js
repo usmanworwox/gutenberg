@@ -13,7 +13,7 @@ import { getBlockTypes, getBlockType } from '@wordpress/blocks';
 /**
  * Internal dependencies
  */
-import { combineUndoableReducers } from './utils/undoable-reducer';
+import { combineUndoableReducers } from '../utils/undoable-reducer';
 import { STORE_DEFAULTS } from './store-defaults';
 
 /***

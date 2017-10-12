@@ -15,8 +15,8 @@ import { MediaUploadButton } from '@wordpress/blocks';
  * Internal dependencies
  */
 import './style.scss';
-import { getEditedPostAttribute, isEditorSidebarPanelOpened } from '../../selectors';
-import { editPost, toggleSidebarPanel } from '../../actions';
+import { getEditedPostAttribute, isEditorSidebarPanelOpened } from '../../state/selectors';
+import { editPost, toggleSidebarPanel } from '../../state/actions';
 
 /**
  * Module Constants

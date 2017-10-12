@@ -18,8 +18,8 @@ import './style.scss';
 import {
 	getEditedPostAttribute,
 	getEditedPostVisibility,
-} from '../../selectors';
-import { editPost, savePost } from '../../actions';
+} from '../../state/selectors';
+import { editPost, savePost } from '../../state/actions';
 
 export class PostVisibility extends Component {
 	constructor( props ) {

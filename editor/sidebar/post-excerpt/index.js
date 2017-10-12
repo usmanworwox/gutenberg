@@ -13,8 +13,8 @@ import { ExternalLink, PanelBody } from '@wordpress/components';
  * Internal Dependencies
  */
 import './style.scss';
-import { getEditedPostExcerpt, isEditorSidebarPanelOpened } from '../../selectors';
-import { editPost, toggleSidebarPanel } from '../../actions';
+import { getEditedPostExcerpt, isEditorSidebarPanelOpened } from '../../state/selectors';
+import { editPost, toggleSidebarPanel } from '../../state/actions';
 
 /**
  * Module Constants

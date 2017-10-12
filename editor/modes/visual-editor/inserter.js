@@ -16,8 +16,8 @@ import { createBlock } from '@wordpress/blocks';
  * Internal dependencies
  */
 import Inserter from '../../inserter';
-import { insertBlock } from '../../actions';
-import { getMostFrequentlyUsedBlocks, getBlockCount } from '../../selectors';
+import { insertBlock } from '../../state/actions';
+import { getMostFrequentlyUsedBlocks, getBlockCount } from '../../state/selectors';
 
 export class VisualEditorInserter extends Component {
 	constructor() {

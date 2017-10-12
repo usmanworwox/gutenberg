@@ -12,8 +12,8 @@ import { PanelBody, PanelRow, FormToggle, withInstanceId } from '@wordpress/comp
 /**
  * Internal Dependencies
  */
-import { getEditedPostAttribute, isEditorSidebarPanelOpened } from '../../selectors';
-import { editPost, toggleSidebarPanel } from '../../actions';
+import { getEditedPostAttribute, isEditorSidebarPanelOpened } from '../../state/selectors';
+import { editPost, toggleSidebarPanel } from '../../state/actions';
 
 /**
  * Module Constants

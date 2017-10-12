@@ -13,8 +13,8 @@ import { PanelRow, FormToggle, withInstanceId, withAPIData } from '@wordpress/co
 /**
  * Internal dependencies
  */
-import { getEditedPostAttribute, getCurrentPostType } from '../../selectors';
-import { editPost } from '../../actions';
+import { getEditedPostAttribute, getCurrentPostType } from '../../state/selectors';
+import { editPost } from '../../state/actions';
 
 export function PostSticky( { onUpdateSticky, postType, postSticky = false, instanceId, user } ) {
 	if (

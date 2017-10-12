@@ -14,8 +14,8 @@ import { PanelBody, PanelRow, withAPIData, withInstanceId } from '@wordpress/com
 /**
  * Internal dependencies
  */
-import { editPost, toggleSidebarPanel } from '../../actions';
-import { getCurrentPostType, getEditedPostAttribute, isEditorSidebarPanelOpened } from '../../selectors';
+import { editPost, toggleSidebarPanel } from '../../state/actions';
+import { getCurrentPostType, getEditedPostAttribute, isEditorSidebarPanelOpened } from '../../state/selectors';
 
 /**
  * Module Constants

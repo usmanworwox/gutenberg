@@ -15,7 +15,7 @@ import { IconButton, Dropdown } from '@wordpress/components';
  */
 import './style.scss';
 import BlockSettingsMenuContent from './content';
-import { selectBlock } from '../actions';
+import { selectBlock } from '../state/actions';
 
 function BlockSettingsMenu( { uids, onSelect } ) {
 	return (

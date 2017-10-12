@@ -17,8 +17,8 @@ import { getCategories, getBlockTypes, BlockIcon } from '@wordpress/blocks';
  * Internal dependencies
  */
 import './style.scss';
-import { getBlocks, getRecentlyUsedBlocks } from '../selectors';
-import { showInsertionPoint, hideInsertionPoint } from '../actions';
+import { getBlocks, getRecentlyUsedBlocks } from '../state/selectors';
+import { showInsertionPoint, hideInsertionPoint } from '../state/actions';
 
 const { TAB, LEFT, UP, RIGHT, DOWN } = keycodes;
 

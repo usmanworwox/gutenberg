@@ -18,8 +18,8 @@ import {
 	getEditedPostAttribute,
 	getSuggestedPostFormat,
 	getCurrentPostType,
-} from '../../selectors';
-import { editPost } from '../../actions';
+} from '../../state/selectors';
+import { editPost } from '../../state/actions';
 
 const POST_FORMATS = [
 	{ id: 'aside', caption: __( 'Aside' ) },

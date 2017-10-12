@@ -16,8 +16,8 @@ import { parse } from '@wordpress/blocks';
  */
 import './style.scss';
 import PostTitle from '../../post-title';
-import { getEditedPostContent } from '../../selectors';
-import { editPost, resetBlocks } from '../../actions';
+import { getEditedPostContent } from '../../state/selectors';
+import { editPost, resetBlocks } from '../../state/actions';
 
 class TextEditor extends Component {
 	constructor( props ) {
