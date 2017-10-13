@@ -123,7 +123,7 @@ export function registerBlockType( name, settings ) {
 		name,
 		attributes: keys( attributes ).reduce( ( memo, attributeKey ) => {
 			memo[ attributeKey ] = {
-				source: { type: 'comment' },
+				source: 'comment',
 				...attributes[ attributeKey ],
 			};
 			return memo;
