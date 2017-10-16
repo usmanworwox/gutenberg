@@ -1100,6 +1100,7 @@ describe( 'selectors', () => {
 				attributes: {
 					foo: {
 						type: 'string',
+						source: 'meta',
 						meta: 'foo',
 					},
 				},

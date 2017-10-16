@@ -9,7 +9,6 @@ import { equal, deepEqual } from 'assert';
 import paste from '../index';
 import { registerBlockType, unregisterBlockType, setUnknownTypeHandlerName } from '../../registration';
 import { createBlock } from '../../factory';
-import { children, prop } from '../../source';
 
 describe( 'paste', () => {
 	beforeAll( () => {
@@ -19,7 +18,8 @@ describe( 'paste', () => {
 			attributes: {
 				content: {
 					type: 'array',
-					source: children( 'figure' ),
+					source: 'children',
+					selector: 'figure',
 				},
 			},
 			transforms: {
@@ -39,7 +39,8 @@ describe( 'paste', () => {
 			attributes: {
 				content: {
 					type: 'string',
-					source: prop( 'innerHTML' ),
+					source: 'property',
+					property: 'innerHTML',
 				},
 			},
 			save: () => {},
