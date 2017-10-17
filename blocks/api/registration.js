@@ -3,7 +3,7 @@
 /**
  * External dependencies
  */
-import { get, isFunction, some, keys } from 'lodash';
+import { get, isFunction, some, reduce } from 'lodash';
 
 /**
  * WordPress dependencies
@@ -121,10 +121,10 @@ export function registerBlockType( name, settings ) {
 	const block = blocks[ name ] = {
 		...settings,
 		name,
-		attributes: keys( attributes ).reduce( ( memo, attributeKey ) => {
+		attributes: reduce( attributes, ( memo, attributeSchema, attributeKey ) => {
 			memo[ attributeKey ] = {
 				source: 'comment',
-				...attributes[ attributeKey ],
+				...attributeSchema,
 			};
 			return memo;
 		}, {} ),
