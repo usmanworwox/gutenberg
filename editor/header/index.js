@@ -34,6 +34,7 @@ function Header( {
 			role="region"
 			aria-label={ __( 'Editor toolbar' ) }
 			className="editor-header"
+			tabIndex="-1"
 		>
 			<div className="editor-header__content-tools">
 				<Inserter position="bottom right" />
