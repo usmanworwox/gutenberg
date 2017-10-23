@@ -237,7 +237,7 @@
 		@include break-wide() {
 			.editor-block-mover {
 				display: block;
-				top: -30px;
+				top: -29px;
 				left: 10px;
 				height: auto;
 
@@ -258,7 +258,7 @@
 		}
 
 		.editor-block-settings-menu {
-			top: -30px;
+			top: -41px;
 			right: 10px;
 			height: auto;
 
@@ -350,7 +350,7 @@
 	input[type=text] {
 		height: $text-editor-font-size * 4; // same height as an empty paragraph
 		margin-top: 0px;
-		margin-bottom: 5px;
+		margin-bottom: 4px;
 		outline: 1px solid transparent;
 		border: none;
 		background: none;
