@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { isString, isObject } from 'lodash';
+import { isString } from 'lodash';
 
 /**
  * WordPress dependencies
@@ -20,6 +20,11 @@ import Editable from '../../editable';
 import InspectorControls from '../../inspector-controls';
 import BlockDescription from '../../block-description';
 
+const toEditableValue = value => value.map( ( subValue => subValue.children ) );
+const fromEditableValue = value => value.map( ( subValue ) => ( {
+	children: subValue,
+} ) );
+
 registerBlockType( 'core/quote', {
 	title: __( 'Quote' ),
 	icon: 'format-quote',
@@ -31,7 +36,9 @@ registerBlockType( 'core/quote', {
 			source: 'query',
 			selector: 'blockquote > p',
 			query: {
-				source: 'node',
+				children: {
+					source: 'node',
+				},
 			},
 			default: [],
 		},
@@ -57,7 +64,7 @@ registerBlockType( 'core/quote', {
 				transform: ( { content } ) => {
 					return createBlock( 'core/quote', {
 						value: [
-							<p key="1">{ content }</p>,
+							{ children: <p key="1">{ content }</p> },
 						],
 					} );
 				},
@@ -68,7 +75,7 @@ registerBlockType( 'core/quote', {
 				transform: ( { content } ) => {
 					return createBlock( 'core/quote', {
 						value: [
-							<p key="1">{ content }</p>,
+							{ children: <p key="1">{ content }</p> },
 						],
 					} );
 				},
@@ -79,7 +86,7 @@ registerBlockType( 'core/quote', {
 				transform: ( { content } ) => {
 					return createBlock( 'core/quote', {
 						value: [
-							<p key="1">{ content }</p>,
+							{ children: <p key="1">{ content }</p> },
 						],
 					} );
 				},
@@ -100,7 +107,9 @@ registerBlockType( 'core/quote', {
 							content: citation,
 						} );
 					}
-					const textContent = isString( textElement ) ? textElement : textElement.props.children;
+					const textContent = isString( textElement.children )
+						? textElement.children
+						: textElement.children.props.children;
 					if ( Array.isArray( value ) || citation ) {
 						const text = createBlock( 'core/paragraph', {
 							content: textContent,
@@ -108,7 +117,9 @@ registerBlockType( 'core/quote', {
 						const quote = createBlock( 'core/quote', {
 							...attrs,
 							citation,
-							value: Array.isArray( value ) ? value.slice( 1 ) : '',
+							value: Array.isArray( value )
+								? value.slice( 1 )
+								: [],
 						} );
 
 						return [ text, quote ];
@@ -122,25 +133,31 @@ registerBlockType( 'core/quote', {
 				type: 'block',
 				blocks: [ 'core/heading' ],
 				transform: ( { value, citation, ...attrs } ) => {
-					const isMultiParagraph = Array.isArray( value ) && isObject( value[ 0 ] ) && value[ 0 ].type === 'p';
-					const headingElement = isMultiParagraph ? value[ 0 ] : value;
-					const headingContent = isObject( headingElement ) && value[ 0 ].type === 'p'
-						? headingElement.props.children
-						: headingElement;
-					if ( isMultiParagraph || citation ) {
-						const heading = createBlock( 'core/heading', {
-							content: headingContent,
+					const textElement = value[ 0 ];
+					if ( ! textElement ) {
+						return createBlock( 'core/heading', {
+							content: citation,
+						} );
+					}
+					const textContent = isString( textElement.children )
+						? textElement.children
+						: textElement.children.props.children;
+					if ( Array.isArray( value ) || citation ) {
+						const text = createBlock( 'core/heading', {
+							content: textContent,
 						} );
 						const quote = createBlock( 'core/quote', {
 							...attrs,
 							citation,
-							value: Array.isArray( value ) ? value.slice( 1 ) : '',
+							value: Array.isArray( value )
+								? value.slice( 1 )
+								: [],
 						} );
 
-						return [ heading, quote ];
+						return [ text, quote ];
 					}
 					return createBlock( 'core/heading', {
-						content: headingContent,
+						content: textContent,
 					} );
 				},
 			},
@@ -183,10 +200,10 @@ registerBlockType( 'core/quote', {
 			>
 				<Editable
 					multiline="p"
-					value={ value }
+					value={ toEditableValue( value ) }
 					onChange={
 						( nextValue ) => setAttributes( {
-							value: nextValue,
+							value: fromEditableValue( nextValue ),
 						} )
 					}
 					focus={ focusedEditable === 'value' ? focus : null }
@@ -222,7 +239,7 @@ registerBlockType( 'core/quote', {
 				style={ { textAlign: align ? align : null } }
 			>
 				{ value.map( ( paragraph, i ) => (
-					<p key={ i }>{ paragraph.props.children }</p>
+					<p key={ i }>{ paragraph.children && paragraph.children.props.children }</p>
 				) ) }
 				{ citation && citation.length > 0 && (
 					<footer>{ citation }</footer>
