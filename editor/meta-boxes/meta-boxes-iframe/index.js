@@ -13,7 +13,7 @@ import { addQueryArgs } from '@wordpress/url';
 import { Component } from '@wordpress/element';
 
 /**
- * Internal Dependencies
+ * Internal dependencies
  */
 import './style.scss';
 import './meta-box-iframe.scss';

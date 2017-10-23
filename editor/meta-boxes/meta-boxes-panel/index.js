@@ -11,7 +11,7 @@ import { Component } from '@wordpress/element';
 import { Button, Dashicon, Panel, PanelHeader } from '@wordpress/components';
 
 /**
- * Internal Dependencies
+ * Internal dependencies
  */
 import './style.scss';
 

@@ -6,8 +6,8 @@ import { connect } from 'react-redux';
 /**
  * Internal dependencies
  */
-import MetaBoxIframe from './iframe';
-import MetaBoxPanel from './panel';
+import MetaBoxIframe from './meta-boxes-iframe';
+import MetaBoxPanel from './meta-boxes-panel';
 import { getMetaBox } from '../selectors';
 
 function MetaBox( { location, isActive } ) {
